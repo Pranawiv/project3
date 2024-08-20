@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button and Container</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 250px;
+            background-color: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px auto;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button class="button" onclick="toggleState()">On</button>
+</div>
+
+<script>
+    let isToggled = false;
+
+    function toggleState() {
+        const container = document.querySelector('.container');
+        const button = document.querySelector('.button');
+
+        if (isToggled) {
+            container.style.backgroundColor = 'lightblue';
+            button.textContent = 'On';
+            button.style.backgroundColor = 'blue';
+            button.style.color = 'white';
+        } else {
+            container.style.backgroundColor = 'lightcoral';
+            button.textContent = 'Off';
+            button.style.backgroundColor = 'darkred';
+            button.style.color = 'yellow';
+        }
+
+        isToggled = !isToggled;
+    }
+</script>
+
+</body>
+</html>
